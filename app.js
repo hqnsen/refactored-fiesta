@@ -33,6 +33,14 @@ function mainCtrl($scope) {
     $scope.beasts.push(new Demiguise());
     $scope.beasts.push(new Bowtruckle());
     $scope.beasts.push(new Erumpent());
+
+    $scope.beastInStock = function(beast) {
+        return beast.quantity > 0;
+    };
+
+    $scope.beastsInStock = function() {
+        return $scope.beasts.filter($scope.beastInStock);
+    };
 }
 
 /*function beastDirective() {

@@ -5,7 +5,7 @@ class BeastInventoryItem {
     constructor(name, price, quantity) {
         this.name = name;
         this.price = price;
-        this.quantityInStock = quantity;
+        this.quantity = quantity;
     }
 }
 

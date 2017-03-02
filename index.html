@@ -29,19 +29,19 @@
 
     <script type='text/ng-template' id='/all'>
         <ul class='beastList'>
-            <li ng-repeat='beast in beasts'>{{beast.name}}</li>
+            <li ng-repeat='beast in beasts'>{{beast.name}} {{beast.quantity}}</li>
         </ul>
     </script>
 
     <script type='text/ng-template' id='/in-stock'>
         <ul class='beastList'>
-            <li ng-repeat='beast in beasts | filter: beast.quantity > 0'>{{beast.name}}</li>
+            <li ng-repeat='beast in beastsInStock()'>{{beast.name}} {{beast.quantity}}</li>
         </ul>
     </script>
 
     <script type='text/ng-template' id='/cart'>
         <ul class='beastList'>
-            <li ng-repeat='beast in cart'>{{beast.name}}</li>
+            <li ng-repeat='beast in cart'>{{beast.name}} {{beast.quantity}}</li>
         </ul>
     </script>
 
