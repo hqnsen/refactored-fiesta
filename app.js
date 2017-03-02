@@ -73,6 +73,11 @@ class Erumpent extends BeastInventoryItem {
 }
 
 angular.module('BuyBeasts', ['ui.router'])
+.factory('beastFactory', function() {
+    var beastScope = {}
+    beastScope.beasts = []
+    return beastScope
+})
 .config([
     '$stateProvider',
     '$urlRouterProvider',
@@ -96,11 +101,11 @@ angular.module('BuyBeasts', ['ui.router'])
         $urlRouterProvider.otherwise('all');
     }
 ])
-.controller('mainCtrl', mainCtrl);
-//.directive('beastDirective', beastDirective);
+.controller('mainCtrl', ['$scope', 'beastFactory', mainCtrl]);
 
-function mainCtrl($scope) {
+function mainCtrl($scope, beastFactory) {
     $scope.beasts = [];
+    //$scope.beasts = beastFactory.beasts
         
     $scope.beasts.push(new Demiguise());
     $scope.beasts.push(new Bowtruckle());
