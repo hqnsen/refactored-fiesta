@@ -1,6 +1,6 @@
 angular.module('BuyBeasts', [])
 .controller('mainCtrl', mainCtrl);
-//.directive('beastDirective', beastDirective)
+//.directive('beastDirective', beastDirective);
 
 function mainCtrl($scope) {
     $scope.beasts = [];

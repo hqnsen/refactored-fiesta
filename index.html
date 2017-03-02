@@ -21,9 +21,28 @@
             <option value='inStock'>Stock</option>
         </select>
     </div>
-    <ul>
+    <!--ul>
         <li ng-repeat='beast in beasts'>{{beast.name}}</li>
-    </ul>
+    </ul-->
+
+    <script type='text/ng-template' id='/all'>
+        <ul class='beastList'>
+            <li ng-repeat='beast in beasts'>{{beast.name}}</li>
+        </ul>
+    </script>
+
+    <script type='text/ng-template' id='/in-stock'>
+        <ul class='beastList'>
+            <li ng-repeat='beast in beasts | filter: beast.quantity > 0'>{{beast.name}}</li>
+        </ul>
+    </script>
+
+    <script type='text/ng-template' id='/cart'>
+        <ul class='beastList'>
+            <li ng-repeat='beast in cart'>{{beast.name}}</li>
+        </ul>
+    </script>
+
     <footer>
         Harry Potter, characters, names, and all related indicia are trademarks of Warner Bros. © 2001 – 2017.
     </footer>
