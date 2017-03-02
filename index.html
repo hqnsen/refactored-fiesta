@@ -14,11 +14,11 @@
         <a class='btn' href='#/all'>All</a>
         <a class='btn' href='#/in-stock'>In Stock</a>
         <a class='btn' href='#/cart'>Cart</a>
-        <select>
+        <select ng-model='sortBy'>
             <option value='name'>Name</option>
-            <option value='priceHighLow'>Price (High)</option>
-            <option value='priceLowHigh'>Price (Low)</option>
-            <option value='inStock'>Stock</option>
+            <option value='-price'>Price (High)</option>
+            <option value='price'>Price (Low)</option>
+            <option value='quantity'>Stock</option>
         </select>
     </div>
     <!--ul>
@@ -28,19 +28,19 @@
 
     <script type='text/ng-template' id='/all'>
         <ul class='beastList'>
-            <li ng-repeat='beast in beasts'>{{beast.name}} {{beast.quantity}}</li>
+            <li ng-repeat='beast in beasts | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
         </ul>
     </script>
 
     <script type='text/ng-template' id='/in-stock'>
         <ul class='beastList'>
-            <li ng-repeat='beast in beastsInStock()'>{{beast.name}} {{beast.quantity}}</li>
+            <li ng-repeat='beast in beastsInStock() | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
         </ul>
     </script>
 
     <script type='text/ng-template' id='/cart'>
         <ul class='beastList'>
-            <li ng-repeat='beast in cart'>{{beast.name}} {{beast.quantity}}</li>
+            <li ng-repeat='beast in cart | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
         </ul>
     </script>
 
