@@ -2,15 +2,18 @@
 <head>
     <title>Buy Fantastic Beasts</title>
     <link rel="stylesheet" href="beasts.css" type="text/css">
+    <script src='http://code.angularjs.org/1.2.9/angular.min.js'></script>
+    <script src='beasts.js'></script>
+    <script src='app.js'></script>
 </head>
-<body>
+<body ng-app='BuyBeasts' ng-controller='mainCtrl'>
     <header>
         <h1>Buy Fantastic Beasts</h1>
     </header>
     <div id='listFilterButtons'>
-        <button class='btn'>All</button>
-        <button class='btn'>In Stock</button>
-        <button class='btn'>Cart</button>
+        <a class='btn' href='#/all'>All</a>
+        <a class='btn' href='#/in-stock'>In Stock</a>
+        <a class='btn' href='#/cart'>Cart</a>
         <select>
             <option value='name'>Name</option>
             <option value='priceHighLow'>Price (High)</option>
@@ -19,9 +22,11 @@
         </select>
     </div>
     <ul>
+        <li ng-repeat='beast in beasts'>{{beast.name}}</li>
     </ul>
     <footer>
         Harry Potter, characters, names, and all related indicia are trademarks of Warner Bros. © 2001 – 2017.
     </footer>
+
 </body>
 </html>
