@@ -6,6 +6,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+img {
+     width: 150px;
+  height: 150px;
+  border-color: red;
+  display:inline-block;
+  margin:10px;
+}
 
 input {
     font-size: 18px;
@@ -46,6 +53,9 @@ footer {
 button.btn {
     outline: none;
 }
+#container {
+    width:700px;
+}
 
 select {
     cursor: pointer;
@@ -55,4 +65,15 @@ select {
     background-color: #fff;
     outline: none;
     margin: 10px 10px;
+}
+.beaster {
+    display:inline-block;
+}
+p {
+    margin:0px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
 }

@@ -19,13 +19,17 @@
         </select>
     </div>
     <ui-view></ui-view>
-
+    
     <script type='text/ng-template' id='/all'>
-        <ul class='beastList'>
-            <li ng-repeat='beast in beasts | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
-        </ul>
+<div id="container">
+    <div class='beastList beaster' ng-repeat='beast in beasts | orderBy: sortBy' >
+        <img ng-src="{{beast.img}}" onclick="" />
+        <p> Name: {{beast.name}} </p>
+        <p> Quantity: {{beast.quantity}}</p>
+        <p> Price: {{beast.price}} </p>
+    </div>
+</div>   
     </script>
-
     <script type='text/ng-template' id='/in-stock'>
         <ul class='beastList'>
             <li ng-repeat='beast in beastsInStock() | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
@@ -34,7 +38,7 @@
 
     <script type='text/ng-template' id='/cart'>
         <ul class='beastList'>
-            <li ng-repeat='beast in cart | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
+            <li ng-repeat='beast in beastsInCart() | orderBy: sortBy'>{{beast.name}} {{beast.quantity}} {{beast.price}}</li>
         </ul>
     </script>
 
