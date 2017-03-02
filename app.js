@@ -1,4 +1,27 @@
-angular.module('BuyBeasts', [])
+angular.module('BuyBeasts', ['ui.router'])
+.config([
+    '$stateProvider',
+    '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('all', {
+                url: '/all',
+                templateUrl: '/all',
+                controller: 'mainCtrl'
+            })
+            .state('in-stock', {
+                url: '/in-stock',
+                templateUrl: '/in-stock',
+                controller: 'mainCtrl'
+            })
+            .state('cart', {
+                url: '/cart',
+                templateUrl: '/cart',
+                controller: 'mainCtrl'
+            });
+        $urlRouterProvider.otherwise('all');
+    }
+])
 .controller('mainCtrl', mainCtrl);
 //.directive('beastDirective', beastDirective);
 
