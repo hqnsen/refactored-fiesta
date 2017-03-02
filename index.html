@@ -14,16 +14,10 @@
         <a class='btn' href='#/all'>All</a>
         <a class='btn' href='#/in-stock'>In Stock</a>
         <a class='btn' href='#/cart'>Cart</a>
-        <select ng-model='sortBy'>
-            <option value='name'>Name</option>
-            <option value='-price'>Price (High)</option>
-            <option value='price'>Price (Low)</option>
-            <option value='quantity'>Stock</option>
+        <select ng-model='sortBy' ng-init='sortBy = sorts[0].value'>
+            <option ng-repeat='sort in sorts' value='{{sort.value}}'>{{sort.name}}</option>
         </select>
     </div>
-    <!--ul>
-        <li ng-repeat='beast in beasts'>{{beast.name}}</li>
-    </ul-->
     <ui-view></ui-view>
 
     <script type='text/ng-template' id='/all'>

@@ -68,6 +68,13 @@ function mainCtrl($scope) {
     $scope.beastsInStock = function() {
         return $scope.beasts.filter($scope.beastInStock);
     };
+
+    $scope.sorts = [
+        {name: 'Name', value: 'name'},
+        {name: 'Price High to Low', value: '-price'},
+        {name: 'Price Low to High', value: 'price'},
+        {name: 'Quantity in Stock', value: '-quantity'}
+    ];
 }
 
 /*function beastDirective() {
