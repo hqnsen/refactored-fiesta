@@ -90,8 +90,8 @@ angular.module('BuyBeasts', ['ui.router'])
     beastScope.beasts.push(new Erumpent());
     beastScope.beasts.push(new Graphorn());
     beastScope.beasts.push(new Niffler());
-    beastScope.beasts.push(new nundu());
-    beastScope.beasts.push(new occamy());
+    beastScope.beasts.push(new Nundu());
+    beastScope.beasts.push(new Occamy());
     beastScope.beasts.push(new Pixie());
     beastScope.beasts.push(new Thunderbird());
 
