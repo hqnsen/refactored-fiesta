@@ -13,8 +13,16 @@ class BeastInventoryItem {
         this.quantity--
     }
     moveToCart() {
-        this.quantity--
-        this.inCart++
+        if (this.quantity > 0) {
+            this.quantity--
+            this.inCart++
+        }
+    }
+    removeFromCart() {
+        if (this.inCart > 0) {
+            this.quantity++
+            this.inCart--
+        }
     }
 }
 
@@ -76,6 +84,17 @@ angular.module('BuyBeasts', ['ui.router'])
 .factory('beastFactory', function() {
     var beastScope = {}
     beastScope.beasts = []
+        
+    beastScope.beasts.push(new Demiguise());
+    beastScope.beasts.push(new Bowtruckle());
+    beastScope.beasts.push(new Erumpent());
+    beastScope.beasts.push(new Graphorn());
+    beastScope.beasts.push(new Niffler());
+    beastScope.beasts.push(new nundu());
+    beastScope.beasts.push(new occamy());
+    beastScope.beasts.push(new Pixie());
+    beastScope.beasts.push(new Thunderbird());
+
     return beastScope
 })
 .config([
@@ -104,19 +123,8 @@ angular.module('BuyBeasts', ['ui.router'])
 .controller('mainCtrl', ['$scope', 'beastFactory', mainCtrl]);
 
 function mainCtrl($scope, beastFactory) {
-    $scope.beasts = [];
-    //$scope.beasts = beastFactory.beasts
-        
-    $scope.beasts.push(new Demiguise());
-    $scope.beasts.push(new Bowtruckle());
-    $scope.beasts.push(new Erumpent());
-    $scope.beasts.push(new Graphorn());
-    $scope.beasts.push(new Niffler());
-    $scope.beasts.push(new nundu());
-    $scope.beasts.push(new occamy());
-    $scope.beasts.push(new Pixie());
-    $scope.beasts.push(new Thunderbird());
-
+    //$scope.beasts = [];
+    $scope.beasts = beastFactory.beasts
 
     $scope.beastInStock = function(beast) {
         return beast.quantity > 0;

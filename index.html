@@ -48,7 +48,7 @@
             <div class='beastList beaster' ng-repeat='beast in beastsInCart() | orderBy: sortBy' >
                 <img ng-src="{{beast.img}}" onclick="" />
                 <p> Name: {{beast.name}} </p>
-                <p> Quantity: {{beast.quantity}}</p>
+                <p> Quantity: {{beast.inCart}}</p>
                 <p> Price: {{beast.price}} </p>
                 <button class='btn' ng-click='beast.removeFromCart()'>Remove</button>
             </div>
