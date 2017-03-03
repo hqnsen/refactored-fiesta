@@ -44,15 +44,15 @@ class Niffler extends BeastInventoryItem {
     }
 }
 
-class nundu extends BeastInventoryItem {
+class Nundu extends BeastInventoryItem {
     constructor() {
-        super('nundu', 5000, 2,'img/nundu.jpg');
+        super('Nundu', 5000, 2,'img/nundu.jpg');
     }
 }
 
-class occamy extends BeastInventoryItem {
+class Occamy extends BeastInventoryItem {
     constructor() {
-        super('occamy', 5000, 2,'img/occamy.jpg');
+        super('Occamy', 5000, 2,'img/occamy.jpg');
     }
 }
 
